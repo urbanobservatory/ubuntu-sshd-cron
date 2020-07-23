@@ -18,7 +18,6 @@ Image specific:
 
 Config:
 
-- exposed port 22
 - default command: `cron -f`
 
 ## Example setup
