@@ -19,7 +19,7 @@ Image specific:
 Config:
 
 - exposed port 22
-- default command: `/usr/sbin/sshd -D`
+- default command: `cron -f`
 
 ## Example setup
 
@@ -54,7 +54,7 @@ This expects that you have already setup Host-Based Authentication on your `targ
   docker run -it --rm \
   -v "/path_to_ssh_settings:/root/.ssh:ro" \
   -v "/my_data_drive:/data:rw" \
-  -v "/path_to_script:/etc/cron.daily/script
+  -v "/path_to_script:/etc/cron.daily/script \
   urbanobservatory/ubuntu-sshd-cron
   ```
 
