@@ -24,7 +24,7 @@ Config:
 
 Using Host-Based Authentication:
 
-This expects that you have already setup Host-Based Authentication on your `target` server. Refer to https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Host-based_Authentication for setup.
+This expects that you have already setup Host-Based Authentication on your `target` server. Refer to https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Host-based_Authentication for setting up host-based authentication.
 
 - generate private and public key pair for your client
   ```bash
@@ -51,7 +51,7 @@ This expects that you have already setup Host-Based Authentication on your `targ
 
   ```bash
   docker run -it --rm \
-  -v "/path_to_ssh_settings:/root/.ssh:ro" \
+  -v "/path_to_ssh_settings:/tmp/.ssh:ro" \
   -v "/my_data_drive:/data:rw" \
   -v "/path_to_script:/etc/cron.daily/script \
   urbanobservatory/ubuntu-sshd-cron
@@ -64,7 +64,7 @@ This expects that you have already setup Host-Based Authentication on your `targ
     image: urbanobservatory/ubuntu-sshd-cron
     restart: unless-stopped
     volumes:
-      - ./path_to_ssh_settings:/root/.ssh:ro
+      - ./path_to_ssh_settings:/tmp/.ssh:ro
       - ./my_data_drive:/data:rw
       - ./script.sh:/etc/cron.daily/script
   ```
