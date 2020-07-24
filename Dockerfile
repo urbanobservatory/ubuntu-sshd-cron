@@ -13,4 +13,4 @@ RUN apt-get clean && \
 ADD run.sh /opt/run.sh
 RUN chmod 700 /opt/run.sh
 
-CMD ["/opt/run.sh"]
+ENTRYPOINT ["/opt/run.sh"]
